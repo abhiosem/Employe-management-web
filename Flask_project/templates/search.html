@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Employee</title>
+</head>
+
+<body>
+
+    <h1>Search Employee</h1>
+
+    <form action="/search" method="POST">
+
+        <label>Name:</label>
+        <input type="text" name="name">
+
+        <br><br>
+
+        <input type="submit" value="Search">
+
+    </form>
+
+    <br><br>
+
+    {% if employees %}
+
+    <table border="1">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+        </tr>
+
+        {% for id, name, department, salary in employees %}
+
+        <tr>
+            <td>{{ id }}</td>
+            <td>{{ name }}</td>
+            <td>{{ department }}</td>
+            <td>{{ salary }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% endif %}
+
+</body>
+
+</html>
